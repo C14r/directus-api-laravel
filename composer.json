@@ -1,0 +1,25 @@
+{
+    "name": "c14r/directus-api-laravel",
+    "description": "API Wrapper for Laravel 5",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "Christian Pfeifer",
+            "email": "mail@christian-pfeifer.de",
+            "homepage": "http://www.christian-pfeifer.de/"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "c14r/directus-api": "^1.0.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "C14r\\Directus\\Laravel\\": "src/"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    }
+}
