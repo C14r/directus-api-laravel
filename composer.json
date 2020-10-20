@@ -19,7 +19,7 @@
             "C14r\\Directus\\Laravel\\": "src/"
         },
         "files": [
-            "helpers.php"
+            "src/helpers.php"
         ]
     }
 }
