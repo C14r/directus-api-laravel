@@ -6,11 +6,13 @@ use C14r\Directus\API;
 
 class Directus extends API
 {
-    private array $instances = [];
+    private static array $instances = [];
 
     public function __construct(?string $connection = null)
     {
-        $connection ?: config('directus.default', 'default');
+        if (is_null($connection)) {
+            $connection = config('directus.default', 'default');
+        }
 
         $base_url = config('directus.connections.' . $connection . '.base_url');
         $project = config('directus.connections.' . $connection . '.project');
