@@ -1,4 +1,4 @@
-# Directus API Wrapper for Laravel 5
+# Directus API Wrapper for Laravel 8
 
 ![packagist version](https://img.shields.io/packagist/v/c14r/directus-api-laravel)
 ![directus version](https://img.shields.io/badge/directus-v8.8.1-blue)
