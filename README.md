@@ -2,7 +2,7 @@
 
 ![packagist version](https://img.shields.io/packagist/v/c14r/directus-api-laravel)
 ![directus version](https://img.shields.io/badge/directus-v8.8.1-blue)
-![laravel version](https://img.shields.io/badge/laravel-v5-blue)
+![laravel version](https://img.shields.io/badge/laravel-v8-blue)
 
 This package allows users to easily consume the REST API provided by the Directus Headless CMS system in any Laravel app.
 
