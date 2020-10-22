@@ -1,6 +1,6 @@
 {
     "name": "c14r/directus-api-laravel",
-    "description": "API Wrapper for Laravel 5",
+    "description": "Directus API Wrapper for Laravel 8",
     "type": "library",
     "license": "GPL-3.0-only",
     "authors": [

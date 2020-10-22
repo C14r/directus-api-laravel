@@ -29,8 +29,12 @@ class DirectusServiceProvider extends ServiceProvider
             __DIR__ . '/../config/directus.php', 'directus'
         );
 
-        $this->app->bind(Directus::class, function ($app) {
-            return new Directus();
+        $this->app->singleton(Directus::class, function ($app, $connection = null) {
+            return Directus::getInstance($connection);
+        });
+
+        $this->app->singleton('directus', function ($app, $connection = null) {
+            return Directus::getInstance($connection);
         });
     }
 

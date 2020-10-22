@@ -3,6 +3,7 @@
 namespace C14r\Directus\Laravel;
 
 use C14r\Directus\API;
+use Illuminate\Support\Arr;
 
 class Directus extends API
 {
@@ -14,11 +15,13 @@ class Directus extends API
             $connection = config('directus.default', 'default');
         }
 
-        $base_url = config('directus.connections.' . $connection . '.base_url');
-        $project = config('directus.connections.' . $connection . '.project');
-        $token = config('directus.connections.' . $connection . '.api_key');
-        $username = config('directus.connections.' . $connection . '.username', '');
-        $password = config('directus.connections.' . $connection . '.password', '');
+        $config = config('directus.connections.' . $connection, []);
+
+        $base_url = Arr::get($config, 'base_url', '');
+        $project = Arr::get($config, 'project', '');
+        $token = Arr::get($config, 'api_key', null);
+        $username = Arr::get($config, 'username', null);
+        $password = Arr::get($config, 'password', null);
 
         parent::__construct($base_url, $project);
 
@@ -29,8 +32,16 @@ class Directus extends API
         }
     }
 
-    public static function getInstance(?string $connection = null)
+    public static function getInstance($connection = null)
     {
+        if (is_array($connection) && isset($connection['connection'])) {
+            $connection = $connection['connection'];
+        }
+        elseif(is_array($connection))
+        {
+            $connection = null;
+        }
+
         if (!isset(static::$instances[$connection])) {
             static::$instances[$connection] = new static($connection);
         }
