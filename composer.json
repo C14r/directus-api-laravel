@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": "^7.3",
+        "php": "^7.3|^8.0",
         "c14r/directus-api": "^1.0.5"
     },
     "autoload": {
